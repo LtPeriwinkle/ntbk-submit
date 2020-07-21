@@ -1,7 +1,5 @@
 h1, p, li, h5 {
   color: white;
-  text-align: center;
-  font-family: 'Epilogue';
 }
 body {
   background-color: #2a2a2e;
@@ -10,4 +8,9 @@ body {
 #nav {
   font-family: 'Montserrat';
   font-size: 1.375em;
+}
+
+#main {
+  text-align: center;
+  font-family: 'Epilogue';
 }
