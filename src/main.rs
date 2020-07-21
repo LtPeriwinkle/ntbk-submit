@@ -8,12 +8,12 @@ async fn main() {
     //if route doesnt redirect past homepage, get homepage.
     let home = warp::get().and(warp::path::end()).and(file("site/home.html"));
     //html for other pages
-    let test = warp::path("test").and(file("site/test.html"));
+    let submit = warp::path("submit").and(file("site/submit.html"));
     //routes to css files for html to access
     let style = warp::path("home.css").and(file("site/css/home.css"));
     //w3.css is a framework that basically lets you cheat at web development
     //combining all the routes
-    let pages = home.or(test);
+    let pages = home.or(submit);
     let css = style;
     let routes = pages.or(css);
 
