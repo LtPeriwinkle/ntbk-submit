@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
+  <script src="date.js"></script>
 </head>
 
-<body>
+<body  onload="setDates()">
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
@@ -35,7 +36,7 @@
       <label for="title">Submission title</label><br>
       <input type="text" id="title" name="title"><br>
       <label for="date">Date of modification</label><br>
-      <select id="date" name="months">
+      <select id="months" name="months">
         <option value="Jan">January</option>
         <option value="Feb">February</option>
         <option value="Mar">March</option>
@@ -49,8 +50,8 @@
         <option value="Nov">November</option>
         <option value="Dec">December</option>
       </select>
-      <input type="number" id="date" name="day" size="6" min="0" max="31">
-      <input type="number" id="date" name="year" size="8">
+      <input type="number" id="date" name="date" size="6" min="0" max="31">
+      <input type="number" id="year" name="year" size="8" value="">
     </form>
   </div>
 </body>

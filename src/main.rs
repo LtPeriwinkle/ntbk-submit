@@ -13,10 +13,12 @@ async fn main() {
     let tutorial = path("tutorial").and(file("site/howto.html"));
     //routes to css files for html to access
     let style = path("home.css").and(file("site/css/home.css"));
+
+    let datejs = path("date.js").and(file("site/js_:(/date.js"));
     //combining all the routes
     let pages = home.or(submit).or(tutorial);
     let css = style;
-    let routes = pages.or(css);
+    let routes = pages.or(css).or(datejs);
 
     println!("routes initalized, server starting");
 
