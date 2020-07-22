@@ -1,6 +1,8 @@
 h1, p, li, h5, label {
   color: white;
+  font-family: 'Epilogue';
 }
+
 body {
   background-color: #2a2a2e;
 }
@@ -10,7 +12,24 @@ body {
   font-size: 1.375em;
 }
 
+input, select {
+  font-family: 'Noto Sans';
+  color: white;
+  background-color: #4a4a4e;
+  border: none;
+  border-radius: 6px;
+}
+
 #main {
   text-align: center;
-  font-family: 'Epilogue';
+}
+
+::-moz-selection {
+  color: black;
+  background: white;
+}
+
+::selection {
+  color: black;
+  background: white;
 }
