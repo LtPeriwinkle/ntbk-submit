@@ -12,7 +12,7 @@ body {
   font-size: 1.375em;
 }
 
-input, select {
+input, select, textarea {
   font-family: 'Noto Sans';
   color: white;
   background-color: #4a4a4e;
@@ -20,16 +20,15 @@ input, select {
   border-radius: 6px;
 }
 
+select {
+  height: 1.6em;
+}
+
 #main {
   text-align: center;
 }
 
-::-moz-selection {
-  color: black;
-  background: white;
-}
-
 ::selection {
-  color: black;
-  background: white;
+  color: #1f1f1f;
+  background: #bbbbbb;
 }
