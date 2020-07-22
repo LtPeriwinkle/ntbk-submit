@@ -21,21 +21,15 @@
   </div>
   <div id="main">
     <h1>contribute to the notebook</h1>
-    <h5>this is the page where a form with the following will be found</h5>
-    <ul>
-      <li>date of modification</li>
-      <li>category of modification (i.e. build, software, design)</li>
-      <li>before/possibly during/after pics (for build)</li>
-      <li>description of modification</li>
-    </ul>
-    <h5>and, in the case of design:</h5>
-    <ul>
-      <li>screenshots of CAD (if applicable)</li>
-      <li>reasoning behind design change</li>
-    </ul>
     <form>
       <label for="title">Submission title</label><br>
       <input type="text" id="title" name="title"><br>
+      <label for="cat">Submission category</label><br>
+      <select id="cat" name="cat">
+        <option value="build">Build</option>
+        <option value="design">Design</option>
+        <option value="code">Code</option>
+      </select><br>
       <label for="date">Date of modification</label><br>
       <select id="months" name="months">
         <option id="jan" value="Jan">January</option>
@@ -53,9 +47,12 @@
       </select>
       <input type="number" id="date" name="date" size="6" min="0" max="31">
       <input type="number" id="year" name="year" size="8" value=""><br>
-      <label for="desc">Description of modification. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> is supported.</label><br>
+      <label for="desc">Description of modification. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> will be supported.</label><br>
       <textarea id="desc" name="desc" rows="8" cols="50"></textarea><br>
-      <label for="bpic">Before photos
+      <label for="bpic">Before images</label><br>
+      <input type="file" id="bpic" name="bpic" accept="image/jpeg, image/png" multiple><br>
+      <label for="apic">After images</label><br>
+      <input type="file" id="apic" name="apic" accept="image/jpeg, image/png" multiple><br><br><br>
     </form>
   </div>
 </body>
