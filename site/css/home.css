@@ -1,10 +1,10 @@
 h1, p, li, h5, label {
-  color: white;
   font-family: 'Epilogue';
 }
 
 body {
   background-color: #2a2a2e;
+  color: white;
 }
 
 #nav {
@@ -13,7 +13,7 @@ body {
 }
 
 input, select, textarea {
-  font-family: 'Noto Sans';
+  font-family: 'Roboto';
   color: white;
   background-color: #4a4a4e;
   border: none;
