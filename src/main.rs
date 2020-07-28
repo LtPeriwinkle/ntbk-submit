@@ -14,7 +14,7 @@ async fn main() {
     //routes to css files for html to access
     let style = path("home.css").and(file("site/css/home.css"));
 
-    let datejs = path("date.js").and(file("site/js_:(/date.js"));
+    let datejs = path("date.js").and(file("site/js/date.js"));
     //combining all the routes
     let pages = home.or(submit).or(tutorial);
     let css = style;
