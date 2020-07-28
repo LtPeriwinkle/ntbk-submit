@@ -24,9 +24,40 @@ select {
   height: 1.6em;
 }
 
+#container {
+  margin: auto;
+  padding: 10px;
+}
+
 #main {
   text-align: center;
 }
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  margin: 20px;
+}
+
+blockquote {
+  border-left: 5px solid #800000;
+  display: block;
+  margin-left: 50px;
+}
+
+pre code {
+  background-color: #333;
+  border: 1px solid #666;
+  display: block;
+  padding: 5px;
+  vertical-align: top;
+  float: left;
+  clear: left;
+}
+
 
 ::selection {
   color: #1f1f1f;

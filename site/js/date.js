@@ -41,5 +41,5 @@ function setDates() {
     case 11:
       month = "dec";
   }
-  document.getElementById(month).setAttribute("selected", "")
+  document.getElementById(month).setAttribute("selected", "");
 }

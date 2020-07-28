@@ -5,12 +5,36 @@
   <meta charset="UTF-8">
   <meta name="author" content="periwinkle">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-  <script src="date.js"></script>
+  <script src="js/date.js"></script>
+  
+  <!-- This is the markdown parsing for the preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>
+  	function parse() {
+	  var md = window.markdownit("commonmark", {
+	    highlight: function (str, lang) {
+		  if (lang && hljs.getLanguage(lang)) {
+		    try {
+		      return "<pre><code>" + hljs.highlight(lang, str, true).value + "</code></pre>";
+			} catch (_) {}
+		  }
+
+		  return "<pre><code>" + md.utils.escapeHtml(str) + "</code></pre>";
+	  	},
+		breaks: true
+	  });
+	  console.log(md.render(document.getElementById('desc').value));
+	  document.getElementById('preview').innerHTML = md.render(document.getElementById('desc').value);
+	}
+  </script>
+	  
 </head>
 
 <body  onload="setDates()">
@@ -19,42 +43,45 @@
     <a href="" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
-  <div id="main">
-    <h1>contribute to the notebook</h1>
-    <form>
-      <label for="title">Submission title</label><br>
-      <input type="text" id="title" name="title"><br>
-      <label for="cat">Submission category</label><br>
-      <select id="cat" name="cat">
-        <option value="build">Build</option>
-        <option value="design">Design</option>
-        <option value="code">Code</option>
-      </select><br>
-      <label for="date">Date of modification</label><br>
-      <!-- i think there is a datepicker built in to html but too late -->
-      <select id="months" name="months">
-        <option id="jan" value="Jan">January</option>
-        <option id="feb" value="Feb">February</option>
-        <option id="mar" value="Mar">March</option>
-        <option id="apr" value="Apr">April</option>
-        <option id="may" value="May">May</option>
-        <option id="jun" value="Jun">June</option>
-        <option id="jul" value="Jul">July</option>
-        <option id="aug" value="Aug">August</option>
-        <option id="sep" value="Sep">September</option>
-        <option id="oct" value="Oct">October</option>
-        <option id="nov" value="Nov">November</option>
-        <option id="dec" value="Dec">December</option>
-      </select>
-      <input type="number" id="date" name="date" size="6" min="0" max="31">
-      <input type="number" id="year" name="year" size="8" value=""><br>
-      <label for="desc">Description of modification. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> will be supported.</label><br>
-      <textarea id="desc" name="desc" rows="8" cols="50"></textarea><br>
-      <label for="bpic">Before images</label><br>
-      <input type="file" id="bpic" name="bpic" accept="image/jpeg, image/png" multiple><br>
-      <label for="apic">After images</label><br>
-      <input type="file" id="apic" name="apic" accept="image/jpeg, image/png" multiple><br><br><br>
-    </form>
-  </div>
-</body>
+  <div class="flex-container">
+  	<div id="main" class="flex-child main">
+    	<h1>contribute to the notebook</h1>
+    	<form>
+      	  <label for="title">Submission title</label><br>
+      	  <input type="text" id="title" name="title"><br>
+      	  <label for="cat">Submission category</label><br>
+          <select id="cat" name="cat">
+        	<option value="build">Build</option>
+        	<option value="design">Design</option>
+        	<option value="code">Code</option>
+      	  </select><br>
+      	  <label for="date">Date of modification</label><br>
+      	  <!-- i think there is a datepicker built in to html but too late -->
+      	  <select id="months" name="months">
+        	<option id="jan" value="Jan">January</option>
+        	<option id="feb" value="Feb">February</option>
+        	<option id="mar" value="Mar">March</option>
+        	<option id="apr" value="Apr">April</option>
+        	<option id="may" value="May">May</option>
+        	<option id="jun" value="Jun">June</option>
+        	<option id="jul" value="Jul">July</option>
+        	<option id="aug" value="Aug">August</option>
+        	<option id="sep" value="Sep">September</option>
+        	<option id="oct" value="Oct">October</option>
+        	<option id="nov" value="Nov">November</option>
+        	<option id="dec" value="Dec">December</option>
+      	  </select>
+      	  <input type="number" id="date" name="date" size="6" min="0" max="31">
+      	  <input type="number" id="year" name="year" size="8" value=""><br>
+      	  <label for="desc">Description of modification. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> will be supported.</label><br>
+      	  <textarea id="desc" name="desc" rows="8" cols="50" oninput="parse()"></textarea><br>
+      	  <label for="bpic">Before images</label><br>
+      	  <input type="file" id="bpic" name="bpic" accept="image/jpeg, image/png" multiple><br>
+      	  <label for="apic">After images</label><br>
+      	  <input type="file" id="apic" name="apic" accept="image/jpeg, image/png" multiple><br><br><br>
+        </form>
+  	  </div>
+  	  <div id="preview" class="flex-child preview"></div>
+    </div>
+  </body>
 </html>
