@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
   <script src="js/date.js"></script>
-  
+
   <!-- This is the markdown parsing for the preview -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/monokai.min.css">
@@ -34,7 +34,7 @@
 	  document.getElementById('preview').innerHTML = md.render(document.getElementById('desc').value);
 	}
   </script>
-	  
+
 </head>
 
 <body onload="setDates()">
@@ -51,25 +51,25 @@
       	  <input type="text" id="title" name="title"><br>
       	  <label for="cat">Submission category</label><br>
           <select id="cat" name="cat">
-        	<option value="build">Build</option>
-        	<option value="design">Design</option>
-        	<option value="code">Code</option>
+        	  <option value="build">Build</option>
+        	  <option value="design">Design</option>
+        	  <option value="code">Code</option>
       	  </select><br>
       	  <label for="date">Date of modification</label><br>
       	  <!-- i think there is a datepicker built in to html but too late -->
       	  <select id="months" name="months">
-        	<option id="jan" value="Jan">January</option>
-        	<option id="feb" value="Feb">February</option>
-        	<option id="mar" value="Mar">March</option>
-        	<option id="apr" value="Apr">April</option>
-        	<option id="may" value="May">May</option>
-        	<option id="jun" value="Jun">June</option>
-        	<option id="jul" value="Jul">July</option>
-        	<option id="aug" value="Aug">August</option>
-        	<option id="sep" value="Sep">September</option>
-        	<option id="oct" value="Oct">October</option>
-        	<option id="nov" value="Nov">November</option>
-        	<option id="dec" value="Dec">December</option>
+        	  <option id="jan" value="Jan">January</option>
+        	  <option id="feb" value="Feb">February</option>
+        	  <option id="mar" value="Mar">March</option>
+        	  <option id="apr" value="Apr">April</option>
+        	  <option id="may" value="May">May</option>
+        	  <option id="jun" value="Jun">June</option>
+        	  <option id="jul" value="Jul">July</option>
+        	  <option id="aug" value="Aug">August</option>
+        	  <option id="sep" value="Sep">September</option>
+        	  <option id="oct" value="Oct">October</option>
+        	  <option id="nov" value="Nov">November</option>
+        	  <option id="dec" value="Dec">December</option>
       	  </select>
       	  <input type="number" id="date" name="date" size="6" min="0" max="31">
       	  <input type="number" id="year" name="year" size="8" value=""><br>
