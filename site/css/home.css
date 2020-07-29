@@ -2,6 +2,10 @@ h1, p, li, h5, label {
   font-family: 'Epilogue';
 }
 
+p {
+  font-size: 1.1em;
+}
+
 body {
   background-color: #2a2a2e;
   color: white;
