@@ -12,8 +12,13 @@ body {
   font-size: 1.375em;
 }
 
+#main {
+  text-align: center;
+}
+
 input, select, textarea {
   font-family: 'Roboto';
+  font-size: 0.75em;
   color: white;
   background-color: #4a4a4e;
   border: none;
@@ -27,10 +32,6 @@ select {
 #container {
   margin: auto;
   padding: 10px;
-}
-
-#main {
-  text-align: center;
 }
 
 .flex-container {
@@ -57,7 +58,6 @@ pre code {
   float: left;
   clear: left;
 }
-
 
 ::selection {
   color: #1f1f1f;
