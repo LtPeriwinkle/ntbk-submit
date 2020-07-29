@@ -1,4 +1,4 @@
-h1, p, li, h5, label {
+h1, li, h5, label {
   font-family: 'Epilogue';
 }
 
@@ -66,4 +66,9 @@ pre code {
 ::selection {
   color: #1f1f1f;
   background: #bbbbbb;
+}
+
+table {
+  max-width: 600px;
+  margin: auto;
 }
