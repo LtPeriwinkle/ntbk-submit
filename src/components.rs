@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use std::thread;
 use std::sync::mpsc;
 use std::sync::Arc;
@@ -47,7 +48,7 @@ impl Worker {
         let thread = thread::spawn(move || loop {
             let job = receiver.lock().unwrap().recv().unwrap();
 
-            println!("Worker {} got a job; executing.", id);
+            //println!("thread {} running a job.", id);
 
             job();
         });
