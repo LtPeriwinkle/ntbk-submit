@@ -1,27 +1,25 @@
-use warp::Filter;
-use warp::fs::file;
-use warp::path;
+use std::net::{TcpListener, TcpStream};
+use std::io::prelude::*;
+mod components;
+use components::*;
 
-#[tokio::main]
-async fn main() {
-    println!("ntbk-server version 0.1.0");
+fn main() {
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let pool = ThreadPool::new(8);
 
-    //if route doesnt redirect past homepage, get homepage.
-    let home = warp::get().and(path::end()).and(file("site/home.html"));
-    //html for other pages
-    let submit = path("contribute").and(file("site/submit.html"));
-    let tutorial = path("tutorial").and(file("site/howto.html"));
-    //routes to css files for html to access
-    let style = path("home.css").and(file("site/css/home.css"));
+    for stream in listener.incoming() {
+        let stream = stream.unwrap();
 
-    let datejs = path("date.js").and(file("site/js/date.js"));
-    //combining all the routes
-    let pages = home.or(submit).or(tutorial);
-    let css = style;
-    let routes = pages.or(css).or(datejs);
+        pool.execute(|| {
+            handle_connection(stream);
+        });
+    }
+}
 
-    println!("routes initalized, server starting");
+fn handle_connection(mut stream: TcpStream) {
+    let mut buffer = [0; 1024];
 
-    //serve to ip address/port specified (127, 0, 0, 1 for localhost, to see over LAN use your local ip)
-    warp::serve(routes).run(([127, 0, 0, 1], 3030)).await;
+    stream.read(&mut buffer).unwrap();
+
+    println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
 }
