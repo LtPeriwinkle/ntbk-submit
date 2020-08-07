@@ -4,7 +4,7 @@ mod components;
 use components::*;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let listener = TcpListener::bind("127.0.0.1:3030").unwrap();
     let pool = ThreadPool::new(8);
 
     for stream in listener.incoming() {
@@ -17,9 +17,8 @@ fn main() {
 }
 
 fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 1024];
+    let mut buffer = String::new();
 
-    stream.read(&mut buffer).unwrap();
-
-    println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
+    stream.read_to_string(&mut buffer).unwrap();
+    println!("{}", buffer);
 }
