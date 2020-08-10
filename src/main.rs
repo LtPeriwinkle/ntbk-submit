@@ -22,6 +22,10 @@ fn handle_connection(mut stream: TcpStream) {
     stream.read(&mut buffer).unwrap();
     let request = String::from_utf8_lossy(&buffer[..]);
     let req_vec: Vec<&str> = request.split(' ').collect();
+    let mut type_buf = [0; 17];
+    stream.read(&mut type_buf).unwrap();
+    let type_string = String::from_utf8_lossy(&type_buf[..]);
+    let req_vec: Vec<&str> = type_string.split(' ').collect();
     if req_vec[0] == "GET" {
         send_page(req_vec[1], stream);
         println!("{}", req_vec[1]);
