@@ -1,5 +1,6 @@
 use std::net::{TcpListener, TcpStream};
 use std::fs;
+use std::fs::File;
 use std::io::prelude::*;
 mod components;
 use components::*;
@@ -25,10 +26,14 @@ fn handle_connection(mut stream: TcpStream) {
     let mut type_buf = [0; 17];
     stream.read(&mut type_buf).unwrap();
     let type_string = String::from_utf8_lossy(&type_buf[..]);
+    let type_string: String;
+    unsafe {type_string = String::from_utf8_unchecked(type_buf.to_vec());}
     let req_vec: Vec<&str> = type_string.split(' ').collect();
     if req_vec[0] == "GET" {
         send_page(req_vec[1], stream);
         println!("{}", req_vec[1]);
+    } else {
+        handle_post(stream);
     }
 }
 
@@ -44,4 +49,19 @@ fn send_page(path: &str, mut stream: TcpStream) {
         _ => file = fs::read_to_string("site/html/no.html").unwrap(),
     }
     stream.write(format!("HTTP/1.1 200 OK\r\nContent-Length: {}\r\n\r\n{}", file.len(), file).as_bytes()).unwrap();
+}
+
+fn handle_post(mut stream: TcpStream) {
+    let mut buf = [0; 2048];
+    let mut full_string = String::new();
+    loop {
+        let num_bytes = stream.read(&mut buf).unwrap();
+        let chunk: String;
+        unsafe {chunk = String::from_utf8_unchecked(buf.to_vec());}
+        full_string.push_str(&chunk);
+        if num_bytes < 2048 {
+            break;
+        }
+    }
+    let _request = File::create("post.txt").unwrap().write(full_string.as_bytes());
 }
