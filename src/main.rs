@@ -37,6 +37,7 @@ fn send_page(path: &str, mut stream: TcpStream) {
         "/date.js" => file = fs::read_to_string("site/js/date.js").unwrap(),
         "/contribute" => file = fs::read_to_string("site/submit.html").unwrap(),
         _ => file = "".to_string(),
+        _ => file = fs::read_to_string("site/html/no.html").unwrap(),
     }
     stream.write(format!("HTTP/1.1 200 OK\r\nContent-Length: {}\r\n\r\n{}", file.len(), file).as_bytes()).unwrap();
 }
