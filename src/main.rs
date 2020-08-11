@@ -19,13 +19,8 @@ fn main() {
 }
 
 fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 1024];
-    stream.read(&mut buffer).unwrap();
-    let request = String::from_utf8_lossy(&buffer[..]);
-    let req_vec: Vec<&str> = request.split(' ').collect();
     let mut type_buf = [0; 17];
     stream.read(&mut type_buf).unwrap();
-    let type_string = String::from_utf8_lossy(&type_buf[..]);
     let type_string: String;
     unsafe {type_string = String::from_utf8_unchecked(type_buf.to_vec());}
     let req_vec: Vec<&str> = type_string.split(' ').collect();
