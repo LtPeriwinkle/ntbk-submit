@@ -35,14 +35,10 @@ fn handle_connection(mut stream: TcpStream) {
 fn send_page(path: &str, mut stream: TcpStream) {
     let file: String;
     match path {
-        "/" => file = fs::read_to_string("site/home.html").unwrap(),
         "/" => file = fs::read_to_string("site/html/home.html").unwrap(),
         "/home.css" => file = fs::read_to_string("site/css/home.css").unwrap(),
-        "/tutorial" => file = fs::read_to_string("site/howto.html").unwrap(),
         "/tutorial" => file = fs::read_to_string("site/html/howto.html").unwrap(),
         "/date.js" => file = fs::read_to_string("site/js/date.js").unwrap(),
-        "/contribute" => file = fs::read_to_string("site/submit.html").unwrap(),
-        _ => file = "".to_string(),
         "/contribute" => file = fs::read_to_string("site/html/submit.html").unwrap(),
         _ => file = fs::read_to_string("site/html/no.html").unwrap(),
     }
