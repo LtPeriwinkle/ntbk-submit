@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/colin/Documents/GitHub/ntbk-submit/target/debug/build/typenum-6e942bf044996789/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/colin/Documents/GitHub/ntbk-submit/target/debug/build/typenum-6e942bf044996789/out/op.rs

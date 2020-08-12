@@ -1,0 +1,10 @@
+/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/deps/mime_guess-ac5b809be443a6ec.rmeta: /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/lib.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/impl_bin_search.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/mime_types.rs /home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/mime_guess-a4247e5bb8594868/out/mime_types_generated.rs
+
+/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/deps/libmime_guess-ac5b809be443a6ec.rlib: /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/lib.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/impl_bin_search.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/mime_types.rs /home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/mime_guess-a4247e5bb8594868/out/mime_types_generated.rs
+
+/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/deps/mime_guess-ac5b809be443a6ec.d: /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/lib.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/impl_bin_search.rs /home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/mime_types.rs /home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/mime_guess-a4247e5bb8594868/out/mime_types_generated.rs
+
+/home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/lib.rs:
+/home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/impl_bin_search.rs:
+/home/colin/.cargo/registry/src/github.com-1ecc6299db9ec823/mime_guess-2.0.3/src/mime_types.rs:
+/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/mime_guess-a4247e5bb8594868/out/mime_types_generated.rs:

@@ -1,0 +1,1 @@
+{"rustc":6030236523401801000,"features":"","target":0,"profile":0,"path":0,"deps":[[2223730373528209381,"build_script_build",false,18046805695823357837]],"local":[{"RerunIfChanged":{"output":"armv7-unknown-linux-gnueabihf/debug/build/proc-macro-nested-1becf003f7be306d/output","paths":["build.rs"]}}],"rustflags":[],"metadata":0}
