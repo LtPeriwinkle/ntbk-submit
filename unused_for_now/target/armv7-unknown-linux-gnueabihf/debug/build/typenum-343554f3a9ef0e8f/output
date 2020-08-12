@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/typenum-343554f3a9ef0e8f/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/home/colin/Documents/GitHub/ntbk-submit/target/armv7-unknown-linux-gnueabihf/debug/build/typenum-343554f3a9ef0e8f/out/op.rs
