@@ -17,25 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/monokai.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
-  <script>
-  	function parse() {
-	  var md = window.markdownit("commonmark", {
-	    highlight: function (str, lang) {
-		  if (lang && hljs.getLanguage(lang)) {
-		    try {
-		      return "<pre><code>" + hljs.highlight(lang, str, true).value + "</code></pre>";
-			} catch (_) {}
-		  }
-
-		  return "<pre><code>" + md.utils.escapeHtml(str) + "</code></pre>";
-	  	},
-		breaks: true
-	  });
-	  console.log(md.render(document.getElementById('desc').value));
-    var title = '## '.concat(document.getElementById('title').value);
-	  document.getElementById('preview').innerHTML = md.render(title).concat(md.render(document.getElementById('desc').value));
-	}
-  </script>
+  <script src="md.js"></script>
 
 </head>
 
