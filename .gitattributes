@@ -1,0 +1,2 @@
+#stupid linguist thinks my php file is hacklang for no good reason
+*.php linguist-language=PHP
