@@ -18,10 +18,6 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <div id="main">
-    <h3 class="epilogue">Thank you for submitting!</h3>
-    <p>Your submission will be reviewed by the moderator of the notebook, and as long as it is not spam or wildly inappropriate, it will <br>
-      be added. Currently, you cannot preview the notebook but this feature is in the works.</p>
-  </div>
   <?php
   //put the text based stuff into a file that i'll figure out how to deal with later lol
   $folder = "/data/{$_POST["year"]}/{$_POST["month"]}/{$_POST["date"]}/{$_POST["cat"]}";
@@ -108,5 +104,6 @@
     }
   }
   ?>
+  </div>
 </body>
 </html>
