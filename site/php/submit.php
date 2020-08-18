@@ -24,4 +24,23 @@
       be added. Currently, you cannot preview the notebook but this feature is in the works.</p>
   </div>
 
+  <?php
+  //put the text based stuff into a file that i'll figure out how to deal with later lol
+  $folder = "/data/{$_POST["year"]}/{$_POST["month"]}/{$_POST["date"]}/{$_POST["cat"]}";
+  mkdir($folder, 0777, true);
+  chdir($folder);
+  $date = "{$_POST["month"]}/{$_POST["date"]}/{$_POST["year"]}";
+  $name = "{$_POST["title"]}.md";
+  $file = fopen($name, "w");
+  $text = "{$_POST["title"]}\n";
+  fwrite($file, $text);
+  $text = "{$_POST["name"]}\n";
+  fwrite($file, $text);
+  $text = "{$_POST["cat"]} on {$date}\n";
+  fwrite($file, $text);
+  $text = "{$_POST["desc"]}\n";
+  fwrite($file, $text);
+  fclose($file);
+  ?>
 </body>
+</html>
