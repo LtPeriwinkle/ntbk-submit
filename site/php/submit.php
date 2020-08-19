@@ -43,12 +43,9 @@
     move_uploaded_file($_FILES["apic"]["tmp_name"], "{$folder}/{$_POST["title"]}-a.png");
   }
   ?>
-<<<<<<< HEAD
   <h3>Thank you for submitting!</h3>
-  <p>Your submission will be reviewed manually and added to the notebook as long as it is not spam or inappropriate. In the future, a feature will
+  <p>Your submission will be reviewed manually and added to the notebook as long as it is not spam or inappropriate.<br> In the future, a feature will
     be added to let you view the notebook also.</p>
-=======
->>>>>>> 1c849db26adb4671d92c8bcad4c279a6ffac1bf2
   </div>
 </body>
 </html>
