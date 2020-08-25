@@ -36,11 +36,19 @@
   fwrite($file, $text);
   fclose($file);
 
-  if (is_uploaded_file($_FILES["bpic"]["tmp_name"])) {
-    move_uploaded_file($_FILES["bpic"]["tmp_name"], "{$folder}/{$_POST["title"]}-b.png");
+  if (is_uploaded_file($_FILES["bpic"]["name"]['0'])) {
+    $number = 0;
+    foreach($_FILES["bpic"]["name"] as &$file) {
+      move_uploaded_file($file, "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
+      $number += 1;
+    }
   }
-  if (is_uploaded_file($_FILES["apic"]["tmp_name"])) {
-    move_uploaded_file($_FILES["apic"]["tmp_name"], "{$folder}/{$_POST["title"]}-a.png");
+  if (is_uploaded_file($_FILES["apic"]["name"]["0"])) {
+    $number = 0;
+    foreach($_FILES["apic"]["name"] as &$file) {
+      move_uploaded_file($file, "{$folder}/images/{$_POST["title"]}/{$number}-a.png");
+      $number += 1;
+    }
   }
   ?>
   <h3>Thank you for submitting!</h3>
