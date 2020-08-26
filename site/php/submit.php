@@ -35,7 +35,8 @@
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
   fclose($file);
-
+  
+  mkdir("{$folder}/images/", 0777, true);
   if (is_uploaded_file($_FILES["bpic"]["name"]['0'])) {
     $number = 0;
     foreach($_FILES["bpic"]["name"] as &$file) {
