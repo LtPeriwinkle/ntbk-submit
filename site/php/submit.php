@@ -35,20 +35,20 @@
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
   fclose($file);
-  
-  mkdir("{$folder}/images/", 0777, true);
-  if (is_uploaded_file($_FILES["bpic"]["name"]['0'])) {
-    $number = 0;
-    foreach($_FILES["bpic"]["name"] as &$file) {
-      move_uploaded_file($file, "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
-      $number += 1;
+
+  mkdir("{$folder}/images/{$_POST["title"]}/", 0777, true);
+  if (isset($_FILES["bpic"]["name"])) {
+    $number = count($_FILES["bpic"]["name"]);
+    for($key = 0; $key < $number; $key++;) {
+      move_uploaded_file($_FILES["bpic"]["tmp_name"][$key], "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
+      $key += 1;
     }
   }
-  if (is_uploaded_file($_FILES["apic"]["name"]["0"])) {
-    $number = 0;
-    foreach($_FILES["apic"]["name"] as &$file) {
-      move_uploaded_file($file, "{$folder}/images/{$_POST["title"]}/{$number}-a.png");
-      $number += 1;
+  if (isset($_FILES["apic"]["name"])) {
+    $number = count($_FILES["apic"]["name"]);
+    for($key = 0; $key < $number; $key++;) {
+      move_uploaded_file($_FILES["apic"]["tmp_name"][$key], "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
+      $key += 1;
     }
   }
   ?>
