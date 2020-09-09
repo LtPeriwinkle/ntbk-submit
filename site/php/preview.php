@@ -3,7 +3,7 @@
 <head>
   <title>9573X Notebook</title>
   <meta charset="UTF-8">
-  <meta name="author" content="periwinkle">
+  <meta name="author" content="yx">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,11 +24,11 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <div id="preview" onload="parse()">
-  <a href=contents.php>Table of Contents</a> 
+  <a href=contents.php>Table of Contents</a>
   <?php
     try {
         $file = "data/md/" . $argv[1];
-               
+
         $md = file_get_contents($file);
         echo $md;
     } catch (exception $e) {
