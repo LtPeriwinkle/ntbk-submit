@@ -19,7 +19,7 @@
   </div>
   <div id="main">
   <?php
-    $files = glob("data/md/*");
+    $files = glob("/data/md/*");
     foreach ($files as $file) {
         $title = substr(fgets(fopen($file, 'r')), 2);
         echo "<a href='preview.php?file=$file'>$title</a>";

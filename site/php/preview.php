@@ -27,7 +27,7 @@
   <a href=contents.php>Table of Contents</a>
   <?php
     try {
-        $file = "data/md/" . $argv[1];
+        $file = "/data/md/" . $argv[1];
 
         $md = file_get_contents($file);
         echo $md;
