@@ -39,7 +39,7 @@
     $tmp_path = $_FILES["pic"]["tmp_name"][$count];
     if ($tmp_path != "") {
       $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$count}.png";
-      $text = "![]({$date}-{$_POST["cat"]}-{$count}.png)\n";
+      $text = "![](/images/{$date}-{$_POST["cat"]}-{$count}.png)\n";
       fwrite($file, $text);
       move_uploaded_file($tmp_path, $final_path);
     }
