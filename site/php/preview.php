@@ -27,14 +27,13 @@
   <a href=contents>Table of Contents</a>
   <div id="raw" onload="parse()">
   <?php
-    try {
-        $file = $_GET["file"];
-
-        $md = file_get_contents("/data/md/{$file}");
-        echo $md;
-    } catch (exception $e) {
-        echo "# ERROR: THE FILE YOU REQUESTED DOES NOT EXIST";
-        echo "## Please click 'Table of Contents' to find valid files";
+    $file = $_GET["file"];
+    $md = file_get_contents("/data/md/{$file}");
+    if ($md != False) {
+      echo $md;
+    } else {
+      echo "# ERROR: THE FILE YOU REQUESTED DOES NOT EXIST";
+      echo "## Please click 'Table of Contents' to find valid files";
     }
   ?>
   </div>
