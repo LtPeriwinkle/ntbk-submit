@@ -17,7 +17,7 @@ function parse() {
         var subHead = document.getElementById('cat').value + " by " + document.getElementById('name').value + " on " + date;
 	    document.getElementById('preview').innerHTML = md.render(title).concat(md.render(subHead)).concat(md.render(document.getElementById('desc').value));
 	} else {
-        var inner = document.getElementById('raw').innerHtml;
-        document.getElementById('preview').innerHtml = md.render(inner);
+        var inner = document.getElementById('raw').innerHTML;
+        document.getElementById('preview').innerHTML = md.render(inner);
     }
 }
