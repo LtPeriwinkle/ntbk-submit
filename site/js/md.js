@@ -11,7 +11,7 @@ function parse() {
   	    },
 	    breaks: true
     });
-    if (document.getElementById('desc')) {
+    if (window.location.href == "apexnotebook.ml/contribute") {
         var title = '# ' + document.getElementById('title').value;
         var date = document.getElementById('month').value + "/" + document.getElementById('date').value + "/" + document.getElementById('year').value;
         var subHead = document.getElementById('category').value + " by " + document.getElementById('contrib').value + " on " + date;
