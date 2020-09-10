@@ -25,7 +25,9 @@
     $files = scandir("/data/md/");
     foreach ($files as $file) {
         $title = $file;
-        echo "<a href='preview?file=$file'>$title</a><br>";
+        if ($title != "." && $title != "..") {
+          echo "<a href='preview?file=$file'>$title</a><br>";
+        }
     }
   ?>
   </div>
