@@ -35,14 +35,14 @@
       	  <label for="title">Submission title</label><br>
       	  <input type="text" id="title" name="title" oninput="parse()"><br>
       	  <label for="cat">Submission category</label><br>
-          <select id="cat" name="cat">
-        	  <option value="build">Build</option>
-        	  <option value="design">Design</option>
-        	  <option value="code">Code</option>
+          <select id="cat" name="cat" oninput="parse()">
+        	  <option value="Build">Build</option>
+        	  <option value="Design">Design</option>
+        	  <option value="Code">Code</option>
       	  </select><br>
       	  <label for="date">Date of modification</label><br>
       	  <!-- i think there is a datepicker built in to html but too late -->
-      	  <select id="months" name="month">
+      	  <select id="months" name="month" oninput="parse()">
         	  <option id="0" value="01">January</option>
         	  <option id="1" value="02">February</option>
         	  <option id="2" value="03">March</option>
@@ -56,14 +56,14 @@
         	  <option id="10" value="11">November</option>
         	  <option id="11" value="12">December</option>
       	  </select>
-      	  <input type="number" id="date" name="date" size="6" min="0" max="31">
-      	  <input type="number" id="year" name="year" size="8"><br>
+      	  <input type="number" id="date" name="date" size="6" min="0" max="31" oninput="parse()">
+      	  <input type="number" id="year" name="year" size="8" oninput="parse()"><br>
       	  <label for="desc">Description of modification. <a href="tutorial#markdown">Markdown</a> is supported.</label><br>
       	  <textarea id="desc" name="desc" rows="8" cols="50" oninput="parse()"></textarea><br>
-      	  <label for="bpic">Images. <a href="tutorial#images">Image guidelines</a></label><br>
-      	  <input type="file" id="pic" name="pic[]" accept="image/jpeg, image/png" multiple="multiple"><br><br><br>
+      	  <label for="pic">Images. <a href="tutorial#images">Image guidelines</a></label><br>
+      	  <input type="file" id="pic" name="pic[]" accept="image/jpeg, image/png" multiple="multiple"><br><br>
           <label for="name">Your name + names of collaborators (if applicable.)<a href="tutorial#name">Why?</a><br>
-          <input type="text" id="name" name="name"><br><br>
+          <input type="text" id="name" name="name" oninput="parse()"><br><br>
           <input type="submit" value="Submit" name="submit">
         </form>
   	  </div>
