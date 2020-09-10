@@ -24,9 +24,9 @@
   $date = "{$_POST["month"]}-{$_POST["date"]}-{$_POST["year"]}";
   $name = "{$date}-{$_POST["cat"]}.md";
   $file = fopen($name, "w");
-  $text = "{$_POST["title"]}\n";
+  $text = "# {$_POST["title"]}\n";
   fwrite($file, $text);
-  $text = "{$_POST["cat"]} by {$_POST["name"]} on {$date}\n";
+  $text = "### {$_POST["cat"]} by {$_POST["name"]} on {$date}\n";
   fwrite($file, $text);
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
@@ -36,8 +36,8 @@
     $tmp_path = $_FILES["pic"]["tmp_name"][$count];
     if ($tmp_path != "") {
       $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$count}.png";
-      $text = "![](/images/{$date}-{$_POST["cat"]}-{$count}.png)\n";
-      fwrite($file, $text);
+      $image = "![](https://apexnotebook.ml/images/{$date}-{$_POST["cat"]}-{$count}.png)\n";
+      fwrite($file, $image);
       move_uploaded_file($tmp_path, $final_path);
     }
     $count += 1;
