@@ -24,13 +24,13 @@
     <a href="contribute" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
+  <a href=contents>Table of Contents</a>
   <div id="preview" onload="parse()">
-  <a href=contents.php>Table of Contents</a>
   <?php
     try {
-        $file = "/data/md/" . $argv[1];
+        $file = $_GET["file"];
 
-        $md = file_get_contents($file);
+        $md = file_get_contents("/data/md/{$file}");
         echo $md;
     } catch (exception $e) {
         echo "# ERROR: THE FILE YOU REQUESTED DOES NOT EXIST";

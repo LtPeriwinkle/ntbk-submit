@@ -19,11 +19,13 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <div id="main">
+    <h1 class="epilogue">Notebook Table of Contents</h1>
+    <p>This is where you can see the notebook created by members of Team 9573X.</p>
   <?php
-    $files = glob("/data/md/*");
+    $files = scandir("/data/md/");
     foreach ($files as $file) {
-        $title = substr(fgets(fopen($file, 'r')), 2);
-        echo "<a href='preview.php?file=$file'>$title</a>";
+        $title = $file;
+        echo "<a href='preview?file=$file'>$title</a><br>";
     }
   ?>
   </div>
