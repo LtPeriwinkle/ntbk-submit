@@ -30,17 +30,20 @@
   fwrite($file, $text);
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
-
-  $count = 0;
-  foreach($_FILES["pic"]["name"] as &$file) {
-    $tmp_path = $_FILES["pic"]["tmp_name"][$count];
+  $i = 0;
+  $count = count($_FILES["pic"]["tmp_name"]);
+  while($i < $count) {
+    fwrite($file, "![img](https://apexnotebook.ml/img/{$date}-{$_POST["cat"]}-{$i}.png)\n");
+    $i = $i + 1;
+  }
+  $i = 0;
+  while ($i < $count) {
+    $tmp_path = $_FILES["pic"]["tmp_name"][$i];
     if ($tmp_path != "") {
-      $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$count}.png";
-      $image = "![](https://apexnotebook.ml/images/{$date}-{$_POST["cat"]}-{$count}.png)\n";
-      fwrite($file, $image);
+      $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$i}.png";
       move_uploaded_file($tmp_path, $final_path);
     }
-    $count += 1;
+    $i += 1;
   }
   fclose($file);
   ?>
