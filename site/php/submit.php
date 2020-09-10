@@ -14,14 +14,13 @@
 <body>
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
+    <a href="contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
     <a href="contribute" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <div id="main">
   <?php
-  $folder = "/data/md";
-  mkdir($folder, 0777, true);
-  chdir($folder);
+  chdir("/data/md/");
   $date = "{$_POST["month"]}-{$_POST["date"]}-{$_POST["year"]}";
   $name = "{$date}-{$_POST["cat"]}.md";
   $file = fopen($name, "w");
@@ -35,7 +34,7 @@
   fwrite($file, $text);
 
   $count = 0;
-  foreach($_FILES["pic"]) {
+  foreach($_FILES["pic"]["name"] as &$file) {
     $tmp_path = $_FILES["pic"]["tmp_name"][$count];
     if ($tmp_path != "") {
       $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$count}.png";
