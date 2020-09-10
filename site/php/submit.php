@@ -19,12 +19,11 @@
   </div>
   <div id="main">
   <?php
-  //put the text based stuff into a file that i'll figure out how to deal with later lol
-  $folder = "/data/{$_POST["year"]}/{$_POST["month"]}/{$_POST["date"]}/{$_POST["cat"]}";
+  $folder = "/data/md";
   mkdir($folder, 0777, true);
   chdir($folder);
-  $date = "{$_POST["month"]}/{$_POST["date"]}/{$_POST["year"]}";
-  $name = "{$_POST["title"]}.md";
+  $date = "{$_POST["month"]}-{$_POST["date"]}-{$_POST["year"]}";
+  $name = "{$date}-{$_POST["cat"]}.md";
   $file = fopen($name, "w");
   $text = "{$_POST["title"]}\n";
   fwrite($file, $text);
@@ -34,23 +33,19 @@
   fwrite($file, $text);
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
-  fclose($file);
 
-  mkdir("{$folder}/images/{$_POST["title"]}/", 0777, true);
-  if (isset($_FILES["bpic"]["name"])) {
-    $number = count($_FILES["bpic"]["name"]);
-    for($key = 0; $key < $number; $key++;) {
-      move_uploaded_file($_FILES["bpic"]["tmp_name"][$key], "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
-      $key += 1;
+  $count = 0;
+  foreach($_FILES["pic"]) {
+    $tmp_path = $_FILES["pic"]["tmp_name"][$count];
+    if ($tmp_path != "") {
+      $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$count}.png";
+      $text = "![]({$date}-{$_POST["cat"]}-{$count}.png)\n";
+      fwrite($file, $text);
+      move_uploaded_file($tmp_path, $final_path);
     }
+    $count += 1;
   }
-  if (isset($_FILES["apic"]["name"])) {
-    $number = count($_FILES["apic"]["name"]);
-    for($key = 0; $key < $number; $key++;) {
-      move_uploaded_file($_FILES["apic"]["tmp_name"][$key], "{$folder}/images/{$_POST["title"]}/{$number}-b.png");
-      $key += 1;
-    }
-  }
+  fclose($file);
   ?>
   <h3>Thank you for submitting!</h3>
   <p>Your submission will be reviewed manually and added to the notebook as long as it is not spam or inappropriate.<br> In the future, a feature will
