@@ -25,7 +25,7 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <a href=contents>Table of Contents</a>
-  <div id="preview" onload="parse()">
+  <div id="raw" onload="parse()">
   <?php
     try {
         $file = $_GET["file"];
@@ -38,5 +38,6 @@
     }
   ?>
   </div>
+  <div id="preview" onload="parse()"></div>
 </body>
 </html>
