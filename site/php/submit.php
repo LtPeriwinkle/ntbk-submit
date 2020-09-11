@@ -48,8 +48,8 @@
   fclose($file);
   ?>
   <h3>Thank you for submitting!</h3>
-  <p>Your submission will be reviewed manually and added to the notebook as long as it is not spam or inappropriate.<br> In the future, a feature will
-    be added to let you view the notebook also.</p>
+  <p>Your submission will be automatically added to the notebook! It will be manually reviewed soon, and if it needs<br>
+   to be removed, you will be contacted. You can preview the notebook <a href="contents">here</a> or by clicking "notebook" in the bar at the top.</p>
   </div>
 </body>
 </html>
