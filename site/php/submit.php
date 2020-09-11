@@ -33,7 +33,7 @@
   $i = 0;
   $count = count($_FILES["pic"]["tmp_name"]);
   while($i < $count) {
-    fwrite($file, "![img](https://apexnotebook.ml/img/{$date}-{$_POST["cat"]}-{$i}.png)\n");
+    fwrite($file, "![](https://apexnotebook.ml/img/{$date}-{$_POST["cat"]}-{$i}.png)\n");
     $i = $i + 1;
   }
   $i = 0;
