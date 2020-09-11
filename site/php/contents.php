@@ -22,11 +22,15 @@
     <h1 class="epilogue">Notebook Table of Contents</h1>
     <p>This is where you can see the notebook created by members of Team 9573X.</p>
   <?php
+    session_start();
     $files = scandir("/data/md/");
+    $_SESSION["files"] = $files;
+    $index = 2;
     foreach ($files as $file) {
         $title = trim($file, ".md");
         if ($title != "") {
-          echo "<a href='preview?file=$file'>$title</a><br>";
+          echo "<a href='preview?file=$index'>$title</a><br>";
+          $index += 1;
         }
     }
   ?>

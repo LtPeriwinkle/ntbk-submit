@@ -27,8 +27,10 @@
   <a href=contents>Table of Contents</a>
   <div hidden id="raw">
   <?php
-    $file = $_GET["file"];
-    $md = file_get_contents("/data/md/{$file}");
+    session_start();
+    $index = $_GET["file"];
+    $filename = $_SESSION["files"][$index];
+    $md = file_get_contents("/data/md/{$filename}");
     if ($md != False) {
       echo $md;
     } else {
