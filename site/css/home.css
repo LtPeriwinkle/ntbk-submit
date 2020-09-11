@@ -66,6 +66,7 @@ pre code {
   vertical-align: top;
   float: left;
   clear: left;
+  margin-right: 100%;
 }
 
 ::selection {
