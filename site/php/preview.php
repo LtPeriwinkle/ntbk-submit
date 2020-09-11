@@ -24,7 +24,6 @@
     <a href="contribute" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
-  <a href=contents>Table of Contents</a>
   <div hidden id="raw">
   <?php
     session_start();
@@ -39,6 +38,9 @@
     }
   ?>
   </div>
-  <div id="preview"></div>
+  <div id="preview" class="preview" font-family="Roboto"></div>
+  <div align="center" id="ntbk-nav">
+    <a href=contents>Table of Contents</a>
+  </div>
 </body>
 </html>

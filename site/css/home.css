@@ -77,3 +77,8 @@ table {
   max-width: 600px;
   margin: auto;
 }
+
+div.preview {
+  margin-left: 20%;
+  margin-right: 20%;
+}
