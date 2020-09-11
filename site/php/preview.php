@@ -17,7 +17,7 @@
   <script src="md.js"></script>
 </head>
 
-<body>
+<body onload="parse()">
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
@@ -25,7 +25,7 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
   </div>
   <a href=contents>Table of Contents</a>
-  <div id="raw" onload="parse()">
+  <div hidden id="raw">
   <?php
     $file = $_GET["file"];
     $md = file_get_contents("/data/md/{$file}");
@@ -37,6 +37,6 @@
     }
   ?>
   </div>
-  <div id="preview" onload="parse()"></div>
+  <div id="preview"></div>
 </body>
 </html>
