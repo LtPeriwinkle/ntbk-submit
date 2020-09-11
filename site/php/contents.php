@@ -25,7 +25,11 @@
     $files = scandir("/data/md/");
     foreach ($files as $file) {
         $title = trim($file, ".md");
+<<<<<<< HEAD
         if ($title != "" && $title != ".") {
+=======
+        if ($title != "") {
+>>>>>>> ad71fc9b17e94fd2dd91c2d75169f7da8a8b5025
           echo "<a href='preview?file=$file'>$title</a><br>";
         }
     }
