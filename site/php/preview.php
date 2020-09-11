@@ -40,7 +40,20 @@
   </div>
   <div id="preview" class="preview" font-family="Roboto"></div>
   <div align="center" id="ntbk-nav">
-    <a href=contents>Table of Contents</a>
+    <?php
+      $prev = $_GET["file"] - 1;
+      $next = $_GET["file"] + 1;
+      $numfiles = count($_SESSION["files"]);
+      echo "<div class='w3-bar'>";
+      if ($_GET["file"] != 2) {
+        echo "<a class='w3-button w3-hover-dark-gray' href='preview.php?file={$prev}'>Previous</a>";
+      }
+      echo "<a class='w3-button w3-hover-dark-gray' href='contents'>Table of Contents</a>";
+      if ($_GET["file"] != $numfiles - 1) {
+        echo "<a class='w3-button w3-hover-dark-gray' href='preview.php?file={$next}'>Next</a>";
+      }
+      echo "</div>";
+      ?>
   </div>
 </body>
 </html>
