@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-  <script src="date.js"></script>
 
   <!-- This is the markdown parsing for the preview -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
@@ -21,7 +20,7 @@
 
 </head>
 
-<body onload="setDates()">
+<body>
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
@@ -42,7 +41,7 @@
         	  <option value="Code">Code</option>
       	  </select><br>
       	  <label for="date">Date of modification</label><br>
-      	  <input type="date" name="date"><br>
+      	  <input type="date" name="date" id="date"><br>
       	  <label for="desc">Description of modification. <a href="tutorial#markdown">Markdown</a> is supported.</label><br>
       	  <textarea id="desc" name="desc" rows="8" cols="50" oninput="parse()"></textarea><br>
       	  <label for="pic">Images. <a href="tutorial#images">Image guidelines</a></label><br>
