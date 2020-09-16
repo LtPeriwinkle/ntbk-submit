@@ -21,8 +21,7 @@
   <div id="main">
   <?php
   chdir("/data/md/");
-  $date = "{$_POST["month"]}-{$_POST["date"]}-{$_POST["year"]}";
-  $name = "{$date}-{$_POST["cat"]}.md";
+  $name = "{$_POST["date"]}-{$_POST["cat"]}.md";
   $file = fopen($name, "w");
   $text = "# {$_POST["title"]}\n";
   fwrite($file, $text);

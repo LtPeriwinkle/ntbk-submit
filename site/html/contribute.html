@@ -42,22 +42,7 @@
         	  <option value="Code">Code</option>
       	  </select><br>
       	  <label for="date">Date of modification</label><br>
-      	  <select id="months" name="month" oninput="parse()">
-        	  <option id="0" value="01">January</option>
-        	  <option id="1" value="02">February</option>
-        	  <option id="2" value="03">March</option>
-        	  <option id="3" value="04">April</option>
-        	  <option id="4" value="05">May</option>
-        	  <option id="5" value="06">June</option>
-        	  <option id="6" value="07">July</option>
-        	  <option id="7" value="08">August</option>
-        	  <option id="8" value="09">September</option>
-        	  <option id="9" value="10">October</option>
-        	  <option id="10" value="11">November</option>
-        	  <option id="11" value="12">December</option>
-      	  </select>
-      	  <input type="number" id="date" name="date" size="6" min="0" max="31" oninput="parse()">
-      	  <input type="number" id="year" name="year" size="8" oninput="parse()"><br>
+      	  <input type="date" name="date">
       	  <label for="desc">Description of modification. <a href="tutorial#markdown">Markdown</a> is supported.</label><br>
       	  <textarea id="desc" name="desc" rows="8" cols="50" oninput="parse()"></textarea><br>
       	  <label for="pic">Images. <a href="tutorial#images">Image guidelines</a></label><br>
