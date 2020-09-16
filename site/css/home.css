@@ -6,6 +6,10 @@ p, label {
   font-size: 1.1em;
 }
 
+p a {
+  font-weight: 500;
+}
+
 a {
   font-weight: 600;
 }
