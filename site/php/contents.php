@@ -27,7 +27,7 @@
     $_SESSION["files"] = $files;
     $index = 2;
     foreach ($files as $file) {
-        $title = trim($file, ".md");
+        $title = substr($file, 0, -3);
         if ($title != "") {
           echo "<a href='preview?file=$index'>$title</a><br>";
           $index += 1;
