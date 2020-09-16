@@ -17,7 +17,7 @@
   <script src="md.js"></script>
 </head>
 
-<body onload="parse() imageSize()">
+<body onload="parse(); imageSize();">
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
