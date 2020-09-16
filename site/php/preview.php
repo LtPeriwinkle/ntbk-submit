@@ -33,8 +33,8 @@
     if ($md != False) {
       echo $md;
     } else {
-      echo "# ERROR: THE FILE YOU REQUESTED DOES NOT EXIST";
-      echo "## Please click 'Table of Contents' to find valid files";
+      echo "<h1>The file you requested does not exist.</h1> <h4>Please return to the table of contents to find valid files.</h4>
+      <p>If the Table of Contents directed you here, please file an issue on Github with the filename that you clicked.</p>";
     }
   ?>
   </div>
