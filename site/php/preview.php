@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
-
+  <script src="img.js"></script>
   <!-- This is the markdown parsing for the preview -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/monokai.min.css">
@@ -17,7 +17,7 @@
   <script src="md.js"></script>
 </head>
 
-<body onload="parse()">
+<body onload="parse() imageSize()">
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
