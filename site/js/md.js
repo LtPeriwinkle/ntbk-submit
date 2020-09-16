@@ -13,7 +13,7 @@ function parse() {
     });
     if (window.location.href == "https://apexnotebook.ml/contribute") {
         var title = '# ' + document.getElementById('title').value;
-        var date = document.getElementById('months').value + "/" + document.getElementById('date').value + "/" + document.getElementById('year').value;
+        var date = document.getElementById('date').value;
         var subHead = document.getElementById('cat').value + " by " + document.getElementById('name').value + " on " + date;
 	    document.getElementById('preview').innerHTML = md.render(title).concat(md.render(subHead)).concat(md.render(document.getElementById('desc').value));
 	} else {
