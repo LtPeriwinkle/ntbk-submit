@@ -28,6 +28,9 @@
   <?php
     session_start();
     $index = $_GET["file"];
+    if (empty($_SESSION["files"])) {
+      $_SESSION["files"] = scandir("/data/md");
+    }
     $filename = $_SESSION["files"][$index];
     $md = file_get_contents("/data/md/{$filename}");
     if ($md != False) {

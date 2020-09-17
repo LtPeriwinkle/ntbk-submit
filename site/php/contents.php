@@ -31,8 +31,12 @@
     <p>This is where you can see the notebook created by members of Team 9573X.</p>
   <?php
     session_start();
-    $files = scandir("/data/md/");
-    $_SESSION["files"] = $files;
+    if (empty($_SESSION["files"])) {
+      $files = scandir("/data/md/");
+      $_SESSION["files"] = $files;
+    } else {
+      $files = $_SESSION["files"];
+    }
     $index = 2;
     foreach ($files as $file) {
         $title = substr($file, 0, -3);
