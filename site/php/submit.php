@@ -25,7 +25,7 @@
   $file = fopen($name, "w");
   $text = "# {$_POST["title"]}\n";
   fwrite($file, $text);
-  $text = "### {$_POST["cat"]} by {$_POST["name"]} on {$date}\n";
+  $text = "### {$_POST["cat"]} by {$_POST["name"]} on {$_POST["date"]}\n";
   fwrite($file, $text);
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
