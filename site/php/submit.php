@@ -32,14 +32,14 @@
   $i = 0;
   $count = count($_FILES["pic"]["tmp_name"]);
   while($i < $count) {
-    fwrite($file, "![](https://apexnotebook.ml/img/{$date}-{$_POST["cat"]}-{$i}.png)\n");
+    fwrite($file, "![](https://apexnotebook.ml/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png)\n");
     $i = $i + 1;
   }
   $i = 0;
   while ($i < $count) {
     $tmp_path = $_FILES["pic"]["tmp_name"][$i];
     if ($tmp_path != "") {
-      $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$i}.png";
+      $final_path = "/data/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png";
       move_uploaded_file($tmp_path, $final_path);
     }
     $i += 1;

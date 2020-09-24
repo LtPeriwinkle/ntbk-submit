@@ -49,11 +49,11 @@
       $numfiles = count($_SESSION["files"]);
       echo "<div class='w3-bar'>";
       if ($_GET["file"] != 2) {
-        echo "<a class='w3-button w3-hover-dark-gray' href='preview.php?file={$prev}'>Previous</a>";
+        echo "<a class='w3-button w3-hover-dark-gray' href='preview?file={$prev}'>Previous</a>";
       }
       echo "<a class='w3-button w3-hover-dark-gray' href='contents'>Table of Contents</a>";
       if ($_GET["file"] != $numfiles - 1) {
-        echo "<a class='w3-button w3-hover-dark-gray' href='preview.php?file={$next}'>Next</a>";
+        echo "<a class='w3-button w3-hover-dark-gray' href='preview?file={$next}'>Next</a>";
       }
       echo "</div>";
       ?>
