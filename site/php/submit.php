@@ -35,8 +35,8 @@
   while($i < $count) {
     if ($_FILES["pic"]["size"][$i] != 0) {
       fwrite($file, "![](https://apexnotebook.ml/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png)\n");
-      $i = $i + 1;
     }
+    $i = $i + 1;
   }
   $i = 0;
   while ($i < $count) {
