@@ -33,8 +33,10 @@
   $i = 0;
   $count = count($_FILES["pic"]["tmp_name"]);
   while($i < $count) {
-    fwrite($file, "![](https://apexnotebook.ml/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png)\n");
-    $i = $i + 1;
+    if ($_FILES["pic"]["size"][$i] != 0) {
+      fwrite($file, "![](https://apexnotebook.ml/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png)\n");
+      $i = $i + 1;
+    }
   }
   $i = 0;
   while ($i < $count) {
@@ -48,7 +50,7 @@
   fclose($file);
   ?>
   <h3>Thank you for submitting!</h3>
-  <p>Your submission will be automatically added to the notebook! It will be manually reviewed soon, and if it needs<br>
+  <p>Your submission will be automatically added to the notebook! It will be manually reviewed, and if it needs<br>
    to be removed, you will be contacted. You can preview the notebook <a href="contents">here</a> or by clicking "notebook" in the bar at the top.</p>
   </div>
 </body>
