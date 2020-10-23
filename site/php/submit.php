@@ -22,11 +22,12 @@
   <div id="main">
   <?php
   chdir("/data/md/");
-  $name = "{$_POST["date"]}-{$_POST["cat"]}.md";
+  $date = str_replace("/", "-", $_POST["date"]);
+  $name = "{$date}-{$_POST["cat"]}.md";
   $file = fopen($name, "w");
   $text = "# {$_POST["title"]}\n";
   fwrite($file, $text);
-  $text = "### {$_POST["cat"]} by {$_POST["name"]} on {$_POST["date"]}\n";
+  $text = "### {$_POST["cat"]} by {$_POST["name"]} on {$date}\n";
   fwrite($file, $text);
   $text = "{$_POST["desc"]}\n";
   fwrite($file, $text);
@@ -34,7 +35,7 @@
   $count = count($_FILES["pic"]["tmp_name"]);
   while($i < $count) {
     if ($_FILES["pic"]["tmp_name"][$i] != "") {
-      fwrite($file, "![](https://apexnotebook.ml/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png)\n");
+      fwrite($file, "![](https://apexnotebook.ml/img/{$date}-{$_POST["cat"]}-{$i}.png)\n");
     }
     $i = $i + 1;
   }
@@ -42,7 +43,7 @@
   while ($i < $count) {
     $tmp_path = $_FILES["pic"]["tmp_name"][$i];
     if ($tmp_path != "") {
-      $final_path = "/data/img/{$_POST["date"]}-{$_POST["cat"]}-{$i}.png";
+      $final_path = "/data/img/{$date}-{$_POST["cat"]}-{$i}.png";
       move_uploaded_file($tmp_path, $final_path);
     }
     $i += 1;
