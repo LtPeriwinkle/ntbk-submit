@@ -1,19 +1,57 @@
 #!/usr/bin/python
 import discord
+import discord.ext.commands
 from dotenv import load_dotenv
-import sys, os
-from pathlib import Path
+import os
+from watchdog.observers import Observer
+from watchdog.events import PatternMatchingEventHandler
+import asyncio
 
 load_dotenv()
-class DMBot(discord.Client):
-    async def on_ready(self):
-        usr = client.get_user(os.getenv("uid"))
-        name = sys.argv[1]
-        name = Path(name)
-        file = open(name)
-        text = file.read()
-        await usr.send(text)
-        sys.exit()
+
+intents = discord.Intents.none()
+intents.members = True
+intents.messages = True
+intents.guilds = True
+
 t = os.getenv("token")
-client = DMBot()
+client = discord.ext.commands.Bot(command_prefix="", intents=intents)
+
+global path
+path = None
+
+
+def created(event):
+    global path
+    path = event.src_path
+
+
+@client.event
+async def on_ready():
+    print("ready")
+
+
+@client.event
+async def on_message(message):
+    print("q")
+    if (message.guild is not None and message.guild.id == 759084716023349299 and message.content == "start"):
+        await message.channel.send("ahasdf")
+        usr = client.get_user(658861212657909791)
+        await message.channel.send("a")
+        event_handler = PatternMatchingEventHandler("*", "", True, True)
+        event_handler.on_created = created
+        event_handler.on_modified = created
+        check = "/data/send/"
+        observer = Observer()
+        observer.schedule(event_handler, check)
+        observer.start()
+        global path
+        while True:
+            await asyncio.sleep(2)
+            if path is not None:
+                file = open(path)
+                await usr.send(file.read())
+                path = None
+
+
 client.run(t)
