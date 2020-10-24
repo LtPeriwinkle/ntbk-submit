@@ -27,7 +27,7 @@
 </html>
 <?php
   chdir("/data/send/");
-  $file = fopen("{$_SERVER['REQUEST_TIME']}-{$_POST["urgency"]}.txt", "w");
+  $file = fopen("{$_SERVER['REQUEST_TIME']}.txt", "w");
   fwrite($file, "{$_POST["body"]} by {$_POST["name"]}");
   fclose($file);
 ?>
