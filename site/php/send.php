@@ -18,6 +18,7 @@
     <a href="contribute" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
     <a href="contact" class="w3-bar-item w3-button w3-hover-dark-gray">contact</a>
+    <a href="" class="w3-bar-item w3-button w3-hover w3-dark-gray">data</a>
   </div>
   <div id="main">
     <h1 class="epilogue">your form has been sent with the requested urgency.</h1>
