@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$file = fopen("apex_raw.csv", "a");
+	fwrite($file, "{$_POST['name']},{$_POST['score']}\n");
+	fclose($file);
+    }
+    ?>
   <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
     <a href=".." class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
     <a href="../contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
@@ -33,7 +40,6 @@
       shell_exec("./data_fmt.py");
       $data = fopen("apex_data.txt", "r");
       echo fread($data, filesize("apex_data.txt"));
-      echo "something";
       ?>
     </table>
     <form method="post" enctype="multipart/form-data">
@@ -43,11 +49,4 @@
       <input name="score" type="number" id="score">
       <input name="submit" value="Submit" type="submit">
     </form>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$file = fopen("apex_raw.csv", "a");
-	fwrite($file, "{$_POST['name']},{$_POST['score']}");
-	fclose($file);
-    }
-    ?>
   </div>

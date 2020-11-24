@@ -14,6 +14,7 @@ with open("apex_raw.csv") as f:
 print(names)
 i = 0
 print(len(names))
+used_names = []
 while i < len(names):
     current_name = names[i]
     per_name_score = []
@@ -24,5 +25,7 @@ while i < len(names):
     to_display = [numpy.mean(np_name_scores), numpy.amax(np_name_scores), numpy.amin(np_name_scores), numpy.std(np_name_scores)]
     print(to_display)
     with open("apex_data.txt", "a") as f:
-        f.write("<tr>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n</tr>".format(current_name, to_display[0], to_display[1], to_display[2], to_display[3]))
+        if current_name not in used_names:
+            used_names.append(current_name)
+            f.write("<tr>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n</tr>".format(current_name, to_display[0], to_display[1], to_display[2], to_display[3]))
     i += 1
