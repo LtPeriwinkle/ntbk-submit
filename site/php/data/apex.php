@@ -31,7 +31,7 @@
       <tr>
       <?php
       shell_exec("./data_fmt.py");
-      echo fread("apex_data.html");
+      echo fread("apex_data.txt");
       ?>
     </table>
     <form method="post" enctype="multipart/form-data">
