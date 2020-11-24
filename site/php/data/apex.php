@@ -31,7 +31,9 @@
       <tr>
       <?php
       shell_exec("./data_fmt.py");
-      echo fread("apex_data.txt");
+      $data = fopen("apex_data.txt", "r");
+      echo fread($data, filesize("apex_data.txt"));
+      echo "something";
       ?>
     </table>
     <form method="post" enctype="multipart/form-data">
@@ -43,9 +45,9 @@
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$file = fopen("/data/scores/apex_raw.csv", "a");
+	$file = fopen("apex_raw.csv", "a");
 	fwrite($file, "{$_POST['name']},{$_POST['score']}");
-	fclose($file)
+	fclose($file);
     }
     ?>
   </div>
