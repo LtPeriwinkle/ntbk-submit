@@ -29,5 +29,23 @@
         <th>Min score</th>
         <th>Std. Deviation</th>
       <tr>
+      <?php
+      shell_exec("./data_fmt.py");
+      echo fread("apex_data.html");
+      ?>
     </table>
+    <form method="post" enctype="multipart/form-data">
+      <label for="name">Driver name</label><br>
+      <input name="name" type="text" id="name"><br>
+      <label for="score">Driver score><br>
+      <input name="score" type="number" id="score">
+      <input name="submit" value="Submit" type="submit">
+    </form>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$file = fopen("/data/scores/apex_raw.csv", "a");
+	fwrite($file, "{$_POST['name']},{$_POST['score']}");
+	fclose($file)
+    }
+    ?>
   </div>
