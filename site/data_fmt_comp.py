@@ -1,10 +1,10 @@
 #!/usr/bin/python
 import numpy
 
-clear = open("apex_data/apex_data.txt", "w")
+clear = open("comp_data/comp_data.txt", "w")
 clear.close()
 
-with open("apex_data/apex_raw.csv") as f:
+with open("comp_data/comp_raw.csv") as f:
     names = []
     scores = []
     for line in f:
@@ -24,7 +24,7 @@ while i < len(names):
     np_name_scores = numpy.array(per_name_score)
     to_display = [numpy.mean(np_name_scores), numpy.amax(np_name_scores), numpy.amin(np_name_scores), numpy.std(np_name_scores)]
     print(to_display)
-    with open("apex_data/apex_data.txt", "a") as f:
+    with open("comp_data/comp_data.txt", "a") as f:
         if current_name not in used_names:
             used_names.append(current_name)
             f.write("<tr>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n<td>{}</td>\n</tr>".format(current_name, to_display[0], to_display[1], to_display[2], to_display[3]))

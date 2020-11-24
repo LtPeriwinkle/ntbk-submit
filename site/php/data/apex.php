@@ -14,7 +14,7 @@
 <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$file = fopen("apex_raw.csv", "a");
+	$file = fopen("apex_data/apex_raw.csv", "a");
 	fwrite($file, "{$_POST['name']},{$_POST['score']}\n");
 	fclose($file);
     }
@@ -28,6 +28,7 @@
     <a href="../data" class="w3-bar-item w3-button w3-hover-dark-gray">data</a>
   </div>
   <div id="main">
+    <h1 class="epilogue">9573X driver data</h5>
     <table class="w3-table w3-bordered w3-border">
       <tr>
         <th>Driver name</th>
@@ -38,12 +39,12 @@
       <tr>
       <?php
       shell_exec("./data_fmt.py");
-      $data = fopen("apex_data.txt", "r");
-      echo fread($data, filesize("apex_data.txt"));
+      $data = fopen("apex_data/apex_data.txt", "r");
+      echo fread($data, filesize("apex_data/apex_data.txt"));
       ?>
     </table>
     <form method="post" enctype="multipart/form-data">
-      <label for="name">Driver name</label><br>
+      <label for="name">Driver name. PLEASE check if this person is already in the table, and if so, spell it the same way</label><br>
       <input name="name" type="text" id="name"><br>
       <label for="score">Driver score><br>
       <input name="score" type="number" id="score">
