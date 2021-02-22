@@ -15,7 +15,7 @@ function parse() {
         var title = '# ' + document.getElementById('title').value;
         var date = document.getElementById('date').value;
         var subHead = document.getElementById('cat').value + " by " + document.getElementById('name').value + " on " + date;
-	      document.getElementById('preview').innerHTML = md.render(title).concat(md.render(subHead)).concat(md.render(document.getElementById('desc').value));
+	    document.getElementById('preview').innerHTML = md.render(title).concat(md.render(subHead)).concat(md.render(document.getElementById('desc').value));
 	} else {
         var inner = document.getElementById('raw').innerHTML;
         document.getElementById('preview').innerHTML = md.render(inner);
