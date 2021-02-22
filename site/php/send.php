@@ -19,6 +19,7 @@
     <a href="tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
     <a href="contact" class="w3-bar-item w3-button w3-hover-dark-gray">contact</a>
     <a href="data" class="w3-bar-item w3-button w3-dark-gray">data</a>
+    <a href="frc" class="w3-bar-item w3-button w3-dark-gray">frc</a>
   </div>
   <div id="main">
     <h1 class="epilogue">your form has been sent with the requested urgency.</h1>

@@ -26,6 +26,7 @@
     <a href="../tutorial" class="w3-bar-item w3-button w3-hover-dark-gray">tutorial</a>
     <a href="../contact" class="w3-bar-item w3-button w3-hover-dark-gray">contact</a>
     <a href="../data" class="w3-bar-item w3-button w3-hover-dark-gray">data</a>
+    <a href="../frc" class="w3-bar-item w3-button w3-hover-dark-gray">frc</a>
   </div>
   <div id="main">
     <h1 class="epilogue">Other teams' competition data</h5>
