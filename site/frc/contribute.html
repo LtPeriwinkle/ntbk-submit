@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>8012 Notebook</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="periwinkle">
+  <meta name="author" content="yx">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+  <!-- This is the markdown parsing for the preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+
+</head>
+
+<body>
+  <div id="nav" class="w3-bar w3-black w3-text-white w3-bottom-bar w3-border-black">
+    <a href="/frc" class="w3-bar-item w3-button w3-hover-dark-gray">home</a>
+    <a href="/frc/contents" class="w3-bar-item w3-button w3-hover-dark-gray">notebook</a>
+    <a href="" class="w3-bar-item w3-button w3-hover-dark-gray">contribute</a>
+  </div>
+  <div>
+  	<div id="main" class="main">
+    	<h1 class="epilogue">contribute to the notebook</h1>
+    	<form enctype="multipart/form-data" action="/frc/submit" method="post">
+      	  <label for="title">Submission title</label><br>
+      	  <input type="text" id="title" name="title"><br>
+      	  <label for="cat">Submission category</label><br>
+          <select id="cat" name="cat">
+        	  <option value="Build">Build</option>
+        	  <option value="Design">Design</option>
+        	  <option value="Code">Code</option>
+      	  </select><br>
+      	  <label for="desc">Description of modification. <a href="tutorial#markdown">Markdown</a> is supported.</label><br>
+      	  <textarea id="desc" name="desc" rows="8" cols="50"></textarea><br>
+      	  <label for="pic">Images. </label><br>
+      	  <input type="file" id="pic" name="pic[]" accept="image/jpeg, image/png" multiple="multiple"><br><br>
+          <input type="submit" value="Submit" name="submit">
+        </form>
+  	 </div>
+      <div id="preview" class="flex-child preview" font-family="Roboto"></div>
+  </div>
+</body>
+</html>
